@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            display: flex;
+            align-items: flex-end;
+            background-color: aqua;
+            height: 500px;
+            justify-content: center;
+            /* animation-name: bounse;
+            animation-duration: 2sec;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite; */        }
+        .ball{
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            background-color:brown;
+            animation: bounse 2s ease-in-out infinite;
+
+        }
+        @keyframes bounse {
+            0%{
+                transform: translateY(0);
+            }
+            50%{
+                transform: translateY(-300px);
+                background-color: blueviolet;
+            }
+            75%{
+                transform: translateY(-200px);
+                background-color: brown;
+            }
+            100%{
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="ball"></div>
+    </div>
+</body>
+</html>

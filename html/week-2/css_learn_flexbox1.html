@@ -4,8 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            background-color: aqua;
+            max-width: 700px;
+            min-height: 650px;
+        }
+        .container p{
+            background-color: red;
+            color: white;
+            font-size: 24px;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+        .flexcount{
+            display: flex;
+            /* flex-direction: column; */
+            /* flex-direction: column-reverse; */
+            /* flex-direction: row-reverse; */
+
+
+            /* justify-content: center; */
+            /* justify-content: space-around; */
+            /* justify-content: space-between; */
+            /* justify-content: space-evenly; */
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container flexcount">
+        <p>hi</p>
+        <p>there</p>
+        <p>how</p>
+        <p>are</p>
+        <p>you</p>
+    </div>
 </body>
 </html>
