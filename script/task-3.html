@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: aqua;
+            height: 500px;
+            width: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" name="" id="input" placeholder="write-something">
+        <button type="button" class="btn">submit</button>
+        <ul id="tasklist"></ul>
+    </div>
+    <script>
+       
+        let btn=document.querySelector(".btn");
+        let tasklist=document.querySelector("#tasklist")
+        btn.addEventListener("click",(event)=>{
+        let text=document.querySelector("#input").value;
+        let list=document.createElement("li");
+        list.innerText=text
+        tasklist.appendChild(list)
+        })
+        
+    </script>
+    
+</body>
+</html>
