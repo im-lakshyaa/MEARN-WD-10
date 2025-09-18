@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .circle{
+            /* background-color: aqua; */
+            border-radius: 50%;
+            height: 100px;
+            width: 100px;
+        }
+        .rectangle{
+            /* background-color: aqua; */
+            height: 100px;
+            width: 200px;
+            margin: 10px;
+        }
+        .square{
+            /* background-color: aqua; */
+            height: 100px;
+            width: 100px;
+        }
+        .container{
+            background-color: aqua;
+            height: 900px;
+            width: 700px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" class="shape-name" placeholder="shape name">
+    <input type="color" class="shape-color" placeholder="entre color">
+    <input type="number" class="quantity" placeholder="entre quantity">
+    <button class="btn" type="button">submit</button>
+    <div class="container"></div>
+    <script>
+        let conatiner=document.querySelector(".container")
+
+        let btn=document.querySelector(".btn")
+        btn.addEventListener("click",()=>{
+        let shape=document.querySelector(".shape-name")
+        let shapeInput=shape.value;
+
+        let color=document.querySelector(".shape-color")
+        let colorInput=color.value;
+
+        let quantity=document.querySelector(".quantity")
+        let quantityInput=quantity.value;
+            for(let i=0;i<quantityInput;i++){
+                let shape=document.createElement("div");
+                shape.classList.add(shapeInput)
+                shape.style.backgroundColor=colorInput;
+                conatiner.appendChild(shape);
+
+            }
+        })
+    </script>
+</body>
+</html>
