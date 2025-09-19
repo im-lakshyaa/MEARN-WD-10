@@ -9,12 +9,14 @@
 
 //next question
 
-let arr=[1,2,3,4,5]
-function filter(array,x){
-    return evens(x)
-}
-function evens(x){
-    if(x%2==0);
-    return x;
-}
-console.log(filter(arr,4));
+// let arr=[1,2,3,4,5]
+// function filter(array,x){
+//     return evens(x)
+// }
+// function evens(x){
+//     if(x%2==0);
+//     return x;
+// }
+// console.log(filter(arr,4));
+
+

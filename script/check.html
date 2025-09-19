@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 400px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    #input {
+      width: 70%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+      margin-right: 8px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background: #4CAF50;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #45a049;
+    }
+
+    #tasklist {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    #tasklist li {
+      background: #f9f9f9;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .delete {
+      background: crimson;
+      border: none;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .delete:hover {
+      background: darkred;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📝 Todo List</h1>
+    <input type="text" id="input" placeholder="Write something...">
+    <button type="button" class="btn">Add</button>
+    <ul id="tasklist"></ul>
+  </div>
+
+  <script>
+    let btn = document.querySelector(".btn");
+    let tasklist = document.querySelector("#tasklist");
+    let input = document.querySelector("#input");
+
+    btn.addEventListener("click", addTask);
+    input.addEventListener("keypress", function(e){
+      if(e.key === "Enter") addTask();
+    });
+
+    function addTask() {
+      let text = input.value.trim();
+      if (text === "") return;
+
+      let list = document.createElement("li");
+      list.innerHTML = `
+        <span>${text}</span>
+        <button class="delete">X</button>
+      `;
+      tasklist.appendChild(list);
+
+      // delete functionality
+      list.querySelector(".delete").addEventListener("click", () => {
+        list.remove();
+      });
+
+      input.value = "";
+    }
+  </script>
+</body>
+</html>

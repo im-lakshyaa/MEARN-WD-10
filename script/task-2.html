@@ -28,8 +28,14 @@
         let container = document.querySelector(".container");
 
         container.addEventListener("click",(event)=>{
-            let shape = document.createElement("div");
+
+            let colors=["red","green","blue","black"]
+            let randomIndex=colors[Math.floor(Math.random()*colors.length)];
+            console.log(randomIndex);
+            
+            let shape = document.createElement("div");            
             shape.classList.add("circle");
+            shape.style.backgroundColor=randomIndex
             // console.log(event);
             shape.style.left=event.clientX-50+"px";
             shape.style.top=event.clientY-50+"px";
