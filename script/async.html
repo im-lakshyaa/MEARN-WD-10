@@ -1,29 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub User Fetch</title>
 </head>
 <body>
-    <button type="button" class="btn">Get Data</button>
+  <input type="text" id="username" placeholder="Enter your GitHub username">
+  <button type="button" id="btn">Get Data</button>
+  <div id="container"></div>
 
+  <script>
+    async function getData() {
+      const user = document.querySelector("#username").value;
+      const container = document.querySelector("#container");
+      container.innerHTML = ""; // clear old data
 
-    <script>
-        // let btn=document.querySelector(".btn")
-        // btn.addEventListener("click",()=>{
-
-        // })
-
-        async function getData () {
-            try{
-                const res= await fetch("https://api.github.com/users/im-lakshyaa")
-                if(!res.ok){
-                    throw new Error("")
-                }
-            }
+      try {
+        const res = await fetch(`https://api.github.com/users/${user}`);
+        if (!res.ok) {
+          throw new Error("Something went wrong");
         }
+
+        const data = await res.json();
+        console.log(data);
+
+        // Create elements
+        const inputData = document.createElement("p");
+        inputData.innerText = `Username: ${data.login}`;
         
-    </script>
+        // const avatar = document.createElement("img");
+        // avatar.src = data.avatar_url;
+        // avatar.width = 100;
+
+        // container.appendChild(avatar);
+        container.appendChild(inputData);
+
+      } catch (err) {
+        console.error(err);
+        // container.innerHTML = `<p style="color:red;">User not found!</p>`;
+      }
+    }
+
+    // ✅ Add event listener outside the function
+    document.getElementById("btn").addEventListener("click", getData);
+  </script>
 </body>
 </html>
