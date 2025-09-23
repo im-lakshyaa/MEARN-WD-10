@@ -7,31 +7,43 @@
     <style>
         .grandparents{
             background-color: aqua;
+            height: 500px;
+            width: 500px;
         }
         .parents{
             background-color: red;
+            height: 350px;
+            width: 250px;
         }
         .child{
-            background-color: black;
+            background-color: violet;
+            height: 200px;
+            width: 100px;
         }
     </style>
 </head>
 <body>
-    <div class="grandparents">
-        h
-        <div class="parents">
-            h
+    <div class="container">
+        <div class="grandparents"> grandparent click
+        <div class="parents">parent click
             <div class="child">
-                h
+                child click
             </div>
         </div>
     </div>
+    </div>
     <script>
-        let grandparent=document.querySelector(".grandparents")
-        let parent=document.querySelector(".parents")
-        let child=document.querySelector(".child")
+        let container=document.querySelector(".container")
+        //  let grandparent=document.querySelector(".grandparents")
+        // let parent=document.querySelector(".parents")
+        // let child=document.querySelector(".child")
 
-
+        container.addEventListener("click",(event)=>{
+            // console.log(event.target);   
+        let para =document.createElement("p");
+        para.innerText = event.target.firstChild.nodeValue.trim();
+        document.body.appendChild(para)
+        })
     </script>
 </body>
 </html>

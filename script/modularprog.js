@@ -21,19 +21,19 @@
 
 function login(email,cb){
     console.log("login sucessfull");
-    cb && cb();
+    cb();
      return function addtoCart(product,cb2){
         console.log(product," is added in cart");
-        cb2() && cb2();
+        cb2();
         return function checkout(cb3){
             console.log("check out is done");
-            cb3()&&cb3();
+            cb3();
             return function payment(amount,cb4){
                 console.log("payment of",amount,"done");
-                cb4()&&cb4();
+                cb4();
                 return function mailRe(mailId,cb5){
                     console.log("mail is sent to:",mailId);
-                  cb5()&&cb5();  
+                  cb5();  
                 }
             }
         }
