@@ -1,18 +1,12 @@
 import React from 'react'
-import Child2 from './Child2';
 
-const Child1 = (props) => {
-    const handleClick=(e)=>{
-    props.setName(e.target.value);
-        
-    }
+const child1 = () => {
   return (
     <div>
-        <input type="text" onChange={handleClick} />
-        <p>this is from child: {props.name}</p>
       
     </div>
   )
 }
 
-export default Child1
+export default child1
+

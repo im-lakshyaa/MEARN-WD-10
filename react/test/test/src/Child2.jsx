@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Child2 = (props) => {
+const child2 = () => {
   return (
     <div>
-        this from sibling : {props.name}
       
     </div>
   )
 }
 
-export default Child2
+export default child2
+
