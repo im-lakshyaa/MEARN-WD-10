@@ -1,12 +1,12 @@
-import React from 'react'
+// import React from 'react'
 
-const child2 = () => {
-  return (
-    <div>
+// const child2 = () => {
+//   return (
+//     <div>
       
-    </div>
-  )
-}
+//     </div>
+//   )
+// }
 
-export default child2
+// export default child2
 
