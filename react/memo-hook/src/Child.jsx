@@ -12,7 +12,7 @@
 
 // export default Child
 
-import React from 'react'
+// import React from 'react'
 import { memo } from 'react';
 const Child= (props)=> {
     console.log("child render again");
